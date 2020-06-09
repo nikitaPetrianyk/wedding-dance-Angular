@@ -1,0 +1,17 @@
+<div *ngIf="!isLoadedAllSections; else loading">
+  <div class="container">
+    <div *ngIf="checkLogin()"><router-outlet></router-outlet></div>
+    <jw-modal id="modal-authorization">
+      <app-login></app-login>
+    </jw-modal>
+    <app-header [sectionContent]="headerSectionData"></app-header>
+    <app-promo [sectionContent]="infoSectionData"></app-promo>
+    <app-services [sectionContent]="serviceSectionData"></app-services>
+    <app-offer [sectionContent]="offerSectionData"></app-offer>
+    <app-coaches [sectionContent]="coachSectionData"></app-coaches>
+  </div>
+  <app-footer [sectionContent]="headerSectionData"></app-footer>
+</div>
+<ng-template #loading>
+  <div>Loading...</div>
+</ng-template>

@@ -1,0 +1,17 @@
+.info {
+  display: flex;
+  min-height: 653px;
+}
+
+@media screen and(max-width: 1025px) {
+  .info {
+    flex-direction: column;
+    height: auto;
+  }
+}
+
+@media screen and(max-width: 1024px) {
+  .info {
+    height: auto;
+  }
+}

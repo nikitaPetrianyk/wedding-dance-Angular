@@ -1,0 +1,38 @@
+.site-header__nav-link {
+  font-family: Roboto, sans-serif;
+  margin-right: 24px;
+  font-size: 14px;
+  color: black;
+  text-decoration: none;
+  display: block;
+  line-height: 1;
+  position: relative;
+}
+
+.site-header__nav-link:after {
+  content: "";
+  display: block;
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: black;
+  transition: width 0.3s ease-out;
+}
+
+.site-header__nav-link:hover:after {
+  width: 100%;
+}
+
+// :host:first-of-type {
+//   .site-header__nav-link {
+//     display: none;
+//   }
+// }
+
+:host:last-of-type {
+  .site-header__nav-link {
+    margin-right: 35px;
+  }
+}

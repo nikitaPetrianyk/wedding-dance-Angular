@@ -1,0 +1,21 @@
+<div class="cards-list coaches-list">
+  <app-coaches-card
+    *ngFor="let card of content"
+    [coachesCard]="card"
+  ></app-coaches-card>
+  <div class="coaches-list__controls">
+    <img
+      class="coaches-list__controls-arrow coaches-list__controls-arrow--left "
+      src="../../../../assets/img/rightArrow.svg"
+      alt="left arrow"
+    />
+    <div class="coaches-list__controls-counter">
+      1 of 4
+    </div>
+    <img
+      class="coaches-list__controls-arrow coaches-list__controls-arrow--right"
+      src="../../../../assets/img/rightArrow.svg"
+      alt="right arrow"
+    />
+  </div>
+</div>

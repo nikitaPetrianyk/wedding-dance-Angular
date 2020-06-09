@@ -1,0 +1,44 @@
+<div class="coaches-list__item card">
+  <div class="coaches-list__img-wrap">
+    <img
+      src="../../../../assets/img/firstCoach.jpg"
+      alt="first coach"
+      class="coaches-list__item-img"
+    />
+  </div>
+  <div class="coaches-list__item-inner">
+    <span class="coaches-list__item-number">01</span>
+    <h3 class="coaches-list__item-title card__title">{{ coachesCard.name }}</h3>
+    <span class="coaches-list__item-profile">{{ coachesCard.direction }}</span>
+    <div class="coaches-list__text-line">
+      <span class="coaches-list__item-text coaches-list__item-text--light"
+        >Work experience</span
+      ><span class="coaches-list__item-text"
+        >{{ coachesCard.workExperience }} years</span
+      >
+    </div>
+    <div class="coaches-list__text-line">
+      <span class="coaches-list__item-text coaches-list__item-text--light"
+        >Teacher for</span
+      ><span class="coaches-list__item-text"
+        >{{ coachesCard.teachExperience }} years</span
+      >
+    </div>
+    <div class="coaches-list__text-line">
+      <span class="coaches-list__item-text coaches-list__item-text--light"
+        >Style</span
+      ><span
+        *ngFor="let item of coachesCard.style"
+        class="coaches-list__item-text"
+        >{{ item }}</span
+      >
+    </div>
+    <button class="coaches-list__item-btn btn btn--large">
+      Let's start
+    </button>
+    <button
+      class="coaches-list__item-btn coaches-list__item-btn--hidden"
+    ></button>
+  </div>
+  <button class="coaches-list__item-btn--hidden"></button>
+</div>

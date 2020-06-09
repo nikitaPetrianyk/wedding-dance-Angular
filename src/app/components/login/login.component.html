@@ -1,0 +1,92 @@
+<form
+  action=""
+  class="login-form"
+  [formGroup]="form"
+  (ngSubmit)="submit('modal-authorization')"
+>
+  <div class="login-form__item">
+    <input
+      class="inp login-form__input"
+      type="email"
+      placeholder="login"
+      formControlName="email"
+      autocomplete="current-email"
+    />
+    <div
+      class="alert alert--danger"
+      *ngIf="form.get('email').invalid && form.get('email').touched"
+    >
+      <p class="alert__info" *ngIf="form.get('email').errors.required">
+        You need to enter an E-mail!
+      </p>
+      <p class="alert__info" *ngIf="form.get('email').errors.pattern">
+        Please, enter a valid E-mail!
+      </p>
+    </div>
+  </div>
+  <div class="login-form__item">
+    <input
+      class="inp login-form__input"
+      type="password"
+      placeholder="password"
+      formControlName="password"
+      autocomplete="current-password"
+    />
+    <div
+      class="alert alert--danger"
+      *ngIf="form.get('password').invalid && form.get('password').touched"
+    >
+      <p
+        #alertInfo
+        class="alert__info"
+        *ngIf="form.get('password').errors.required"
+      >
+        You need to enter a password!
+      </p>
+      <p class="alert__info" *ngIf="form.get('password').errors.minlength">
+        The min length must be
+        {{ form.get("password").errors.minlength.requiredLength }} symbols.
+        Current length -
+        {{ form.get("password").errors.minlength.actualLength }}
+      </p>
+    </div>
+  </div>
+  <div class="login-form__btn-group">
+    <button
+      type="submit"
+      class="btn login-form__btn"
+      [ngStyle]="{
+        opacity:
+          (form.get('email').invalid && form.get('email').touched) ||
+          (form.get('password').invalid && form.get('password').touched)
+            ? '0'
+            : '1'
+      }"
+    >
+      Ok
+    </button>
+    <button
+      class="btn login-form__btn"
+      type="button"
+      (click)="closeModal('modal-authorization')"
+      [ngStyle]="{
+        transform:
+          (form.get('email').invalid && form.get('email').touched) ||
+          (form.get('password').invalid && form.get('password').touched)
+            ? 'translateX(-55%)'
+            : 'none'
+      }"
+    >
+      Close
+    </button>
+  </div>
+  <div
+    class="login-form__authorization-alert alert alert--danger"
+    [ngStyle]="{ display: isVisible ? 'block' : 'none' }"
+  >
+    <p class="alert__info">
+      The data you entered is not correct for authorization. Please, check
+      entered email or password!
+    </p>
+  </div>
+</form>

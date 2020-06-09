@@ -1,0 +1,47 @@
+$btn-color: #ff699f;
+
+.mobile-menu {
+  position: absolute;
+  width: 100vw;
+  height: 95vh;
+  background-color: #fff;
+  left: -15px;
+  top: 0;
+  padding: 40px 0px 0px 25px;
+  background-image: url(../../../assets/img/Menu.jpg);
+  background-position: right top;
+  background-size: contain;
+  background-repeat: no-repeat;
+  opacity: 1;
+  transition: ease-in 1s;
+  border-bottom: 4px solid $btn-color;
+}
+
+.mobile-menu__title {
+  font-size: 36px;
+  margin-bottom: 48px;
+}
+
+.mobile-menu.opened {
+  ::ng-deep .site-header__navigation {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  ::ng-deep .site-header__nav-link {
+    margin-bottom: 40px;
+    font-size: 24px;
+    font-weight: bold;
+  }
+}
+
+@media screen and(min-width: 1025px) {
+  .mobile-menu {
+    display: none;
+  }
+}
+@media screen and(max-width: 1025px) {
+  .mobile-menu {
+    display: block;
+  }
+}

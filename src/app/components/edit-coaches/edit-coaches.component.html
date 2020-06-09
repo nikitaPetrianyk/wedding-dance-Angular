@@ -1,0 +1,56 @@
+<form class="edit-coaches" [formGroup]="form" (ngSubmit)="submit('modal-edit')">
+  <div class="edit-coaches__item" formGroupName="meta">
+    <span class="edit-coaches__current-value">Current value: </span>
+    <input
+      formControlName="title"
+      class="edit-coaches__inp inp"
+      type="text"
+      value="{{ meta.title }}"
+    />
+    <span class="edit-coaches__current-value">Current value: </span>
+    <input
+      formControlName="description"
+      class="edit-coaches__inp inp"
+      type="text"
+      value="{{ meta.description }}"
+    />
+  </div>
+  <div class="edit-coaches__item">
+    <ul
+      class="coaches-list"
+      formArrayName="content"
+      *ngFor="let item of formData.controls; let i = index"
+    >
+      <li [formGroupName]="i" class="coaches-list__item">
+        Current values:
+        <input
+          class="inp coaches-list__item-inp"
+          formControlName="name"
+          value="{{ item.name }}"
+        />
+        <input
+          class="inp coaches-list__item-inp"
+          formControlName="direction"
+          value="{{ item.direction }}"
+        />
+        <input
+          class="inp coaches-list__item-inp"
+          formControlName="workExperience"
+          value="{{ item.workExperience }}"
+        />
+        <input
+          class="inp coaches-list__item-inp"
+          formControlName="teachExperience"
+          value="{{ item.teachExperience }}"
+        />
+        <input class="inp coaches-list__item-inp" formControlName="style" />
+        <input class="inp coaches-list__item-inp" formControlName="url" />
+      </li>
+    </ul>
+  </div>
+  <div class="edit-coaches__item">
+    <div class="edit-coaches__btn-group">
+      <button type="submit" class="edit-coaches__btn btn">Submit</button>
+    </div>
+  </div>
+</form>

@@ -1,0 +1,9 @@
+<div class="site-header__content">
+  <app-navigation [navItems]="content"></app-navigation>
+  <button
+    class="site-header__button btn"
+    (click)="openModal('modal-authorization')"
+  >
+    <a href="#" class="site-header__link">{{ action.title }}</a>
+  </button>
+</div>

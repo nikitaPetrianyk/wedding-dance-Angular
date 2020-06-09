@@ -1,0 +1,17 @@
+<div class="section-wrapper">
+  <section class="coaches">
+    <jw-modal id="modal-edit" *ngIf="checkLogin()">
+      <app-edit-coaches
+        [meta]="getMeta()"
+        [content]="getContent()"
+      ></app-edit-coaches>
+    </jw-modal>
+    <app-block-description [meta]="getMeta()"></app-block-description>
+    <app-coaches-list [content]="getContent()"></app-coaches-list>
+    <div class="coaches__edit" *ngIf="checkLogin()">
+      <button class="coaches__edit-btn btn" (click)="openModal('modal-edit')">
+        Edit
+      </button>
+    </div>
+  </section>
+</div>

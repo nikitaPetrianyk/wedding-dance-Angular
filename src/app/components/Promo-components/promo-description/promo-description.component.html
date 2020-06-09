@@ -1,0 +1,14 @@
+<div class="info__text-wrap">
+  <h1 class="info__title">
+    {{ meta.title }}
+  </h1>
+  <h3 class="info__subtitle">
+    {{ meta.location }}
+  </h3>
+  <p class="info__text">
+    {{ meta.description }}
+  </p>
+  <button class="info__button btn btn--large">
+    <a [href]="action.url" class="info__btn-link">{{ action.title }}</a>
+  </button>
+</div>

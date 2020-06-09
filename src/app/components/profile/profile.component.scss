@@ -1,0 +1,16 @@
+$btn-color: #ff699f;
+.profile {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 20px 0px;
+}
+
+.profile__btn:hover {
+  border-color: $btn-color;
+  a {
+    color: $btn-color;
+  }
+}

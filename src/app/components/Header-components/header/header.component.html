@@ -1,0 +1,13 @@
+<header class="site-header">
+  <app-logo [meta]="getMeta()"></app-logo>
+  <app-header-content
+    [content]="getContent()"
+    [action]="getAction()"
+  ></app-header-content>
+  <app-burger (toggleMenu)="toggleMenu()"></app-burger>
+  <app-mobile-menu
+    [ngStyle]="{ display: isVisible ? 'block' : 'none' }"
+    [content]="getContent()"
+    [action]="getAction()"
+  ></app-mobile-menu>
+</header>
