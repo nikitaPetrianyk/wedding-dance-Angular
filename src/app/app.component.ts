@@ -3,7 +3,6 @@ import { QueriesService } from './services/queries.service';
 import { Section, Sections } from './interfaces/section.interface';
 import { ModalService } from './services/modal.service';
 import { AuthService } from './services/auth.service';
-import { Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 
 @Component({
@@ -29,8 +28,7 @@ export class AppComponent implements OnInit {
   constructor(
     private queriesService: QueriesService,
     private modalService: ModalService,
-    private authService: AuthService,
-    private router: Router
+    private authService: AuthService
   ) {}
 
   ngOnInit(): void {
@@ -47,11 +45,6 @@ export class AppComponent implements OnInit {
   }
 
   checkLogin(): boolean {
-    // if (this.authService.logIn) {
-    //   this.router.navigate(['profile']);
-    // } else {
-    //   this.router.navigate(['/']);
-    // }
     return this.authService.logIn;
   }
 
